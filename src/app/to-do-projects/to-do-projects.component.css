@@ -1,0 +1,49 @@
+#wrap{
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns:15% 15% 15% 15% 15% ;
+    grid-gap: 6%;
+    
+}
+#wrap div{
+    background-color: burlywood;
+    text-align: center;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+h2{
+    display: block;
+}
+#project-form{
+    width: 30%;
+    margin:3% auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+
+}
+#project-form div{
+    display: flex;
+    margin: 4%;
+    justify-content: space-around;
+}
+
+#project-form button{
+    background-color:rgba(236, 209, 173, 0.596) !important;
+}
+
+.delete{
+    display: block !important;
+    position: absolute !important;
+    top:1px !important;
+    right: 3px !important;
+    font-family: cursive !important;
+    color: rgb(218, 182, 136);
+    text-decoration: underline;
+    text-shadow: 0px 0px 2px rgb(128, 57, 25);
+    font-size: 0.97em !important;
+}

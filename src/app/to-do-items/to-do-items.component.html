@@ -1,0 +1,66 @@
+<div *ngIf="taskForm" id="tasks">
+    <div>
+        <div  *ngFor="let task of project['data']; index as i">
+            <span (click)="deleteTask(i)" class="delete">x</span>
+            <b >Title:{{task["title"]}}</b>
+            <p>Date:{{task["date"]|date}}</p>
+            <p>Description:{{task["description"]}}</p>
+            <p>Tags:{{task["tags"]}}</p>
+            <p>Priority:{{task["priority"]}}</p>
+            <i (click)="editTask(i)" class="edit">edit</i>
+            
+        </div>
+    </div>
+    <button (click)="hideAllTasks()">hide</button>
+</div>
+<div id="wrap">
+    
+    
+    <div id="task-form">
+        <div *ngIf="prjName">
+            <h3>{{prjName}}</h3>
+            <label for="task">Title:</label>
+            <br>
+            <input type="text"  name="task" [(ngModel)]="newTitle" />
+            <br>
+            <label for="date">Date:</label>
+            <br>
+            <input type="date"  name="date" [(ngModel)]="newDate" />
+            <br>
+            <label for="description">Description:</label>
+            <br>
+            <input type="text"  name="description" [(ngModel)]="newDescription" />
+            <br>
+            <label for="tags">Tags:</label>
+            <br>
+            <input type="text"  name="tags" [(ngModel)]="newTags" />
+            <br>
+            <label for="priority">priority:</label>
+            <br>
+            <select name="priority" id="priority" [(ngModel)]="newPriority" >
+                <option value="1">very important</option>
+                <option value="2">important</option>
+                <option value="3">near future</option>
+                <option value="4">next time</option>
+            </select>
+            <br>
+            <button  (click)="addTask()" id="add">Add Task</button>
+            
+        </div>
+        
+    </div>
+    
+    <div>
+        
+        <i>“A man who does not plan long ahead will find trouble at his door.” ― Confucius, Chinese philosopher</i>
+        <button *ngIf="prjName" (click)="showAllTasks()" id="show">show all task</button>
+
+    </div>
+
+    
+</div>
+
+
+
+
+

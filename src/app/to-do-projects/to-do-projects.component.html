@@ -1,0 +1,16 @@
+<div id="wrap">
+    <div  *ngFor="let project of projects; index as i" >
+        <span (click)="deleteProject(i)" class="delete">X</span>
+        <h2 (click)="onCh($event)" >{{project["pr"]}}</h2>
+    </div>
+</div>
+<div id="project-form">
+    <div *ngIf="prForm">
+        <label for="project">Project name:</label>
+        <input type="text"  name="project" [(ngModel)]="newProject" />
+        <br>
+        <button class="btn" id="btnAdd" (click)="addProject()">Add Project</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+    <button class="btn" (click)="createProject()">Create Project</button>
+</div>
